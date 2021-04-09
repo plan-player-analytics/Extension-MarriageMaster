@@ -31,20 +31,33 @@ import java.util.Optional;
  *
  * @author AuroraLS3
  */
-public class NewExtensionFactory {
+public class MarriageMasterExtensionFactory {
 
-    private boolean isAvailable() {
+    private boolean isBukkitAvailable() {
+        return isClassAvailable("at.pcgamingfreaks.MarriageMaster.Bukkit.API.MarriageMasterPlugin")
+                && isClassAvailable("org.bukkit.plugin.java.JavaPlugin");
+    }
+
+    private boolean isBungeeAvailable() {
+        return isClassAvailable("at.pcgamingfreaks.MarriageMaster.Bungee.API.MarriageMasterPlugin")
+                && isClassAvailable("net.md_5.bungee.api.ProxyServer");
+    }
+
+    private boolean isClassAvailable(String className) {
         try {
-            Class.forName("");
+            Class.forName(className);
             return true;
         } catch (ClassNotFoundException e) {
             return false;
         }
     }
 
+
     public Optional<DataExtension> createExtension() {
-        if (isAvailable()) {
-            return Optional.of(new NewExtension());
+        if (isBukkitAvailable()) {
+            return Optional.of(new BukkitMarriageMasterExtension());
+        } else if (isBungeeAvailable()) {
+            return Optional.of(new BungeeMarriageMasterExtension());
         }
         return Optional.empty();
     }
