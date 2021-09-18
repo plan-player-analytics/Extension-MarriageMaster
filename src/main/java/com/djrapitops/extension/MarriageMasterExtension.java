@@ -107,7 +107,7 @@ public abstract class MarriageMasterExtension implements DataExtension {
                                 .buildNumber(Optional.ofNullable(data.getMarriageData())
                                         .map(Marriage::getWeddingDate)
                                         .map(Date::getTime)
-                                        .orElse(0L))
+                                        .orElse(null))
                         : null)
                 .addValue(String.class, () -> married ?
                         valueBuilder("Surname")
