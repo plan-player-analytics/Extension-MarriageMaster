@@ -20,7 +20,7 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
 */
-package com.djrapitops.extension;
+package net.playeranalytics.extension.marriagemaster;
 
 import at.pcgamingfreaks.MarriageMaster.API.Marriage;
 import at.pcgamingfreaks.MarriageMaster.API.MarriageMasterPlugin;

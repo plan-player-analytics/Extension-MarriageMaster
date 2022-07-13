@@ -1,4 +1,4 @@
-package com.djrapitops.extension;
+package net.playeranalytics.extension.marriagemaster;
 
 import at.pcgamingfreaks.MarriageMaster.API.MarriageMasterPlugin;
 import com.djrapitops.plan.extension.NotReadyException;
